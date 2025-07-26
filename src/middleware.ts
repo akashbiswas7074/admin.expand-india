@@ -1,15 +1,26 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest } from 'next/server';
 
-export default createMiddleware({
-  // A list of all locales that are supported
-  locales: ['en', 'en-CA'],
-
-  // Used when no locale matches
-  defaultLocale: 'en',
+export default function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
   
-  // Always redirect to locale-prefixed routes
-  localePrefix: 'always'
-});
+  // Allow direct access to /admin
+  if (pathname === '/admin') {
+    return;
+  }
+  
+  // Allow root page to handle its own redirect
+  if (pathname === '/') {
+    return;
+  }
+  
+  // Apply locale middleware for all other routes
+  return createMiddleware({
+    locales: ['en', 'en-CA'],
+    defaultLocale: 'en',
+    localePrefix: 'always'
+  })(request);
+}
 
 export const config = {
   // Match all pathnames except for
@@ -17,6 +28,5 @@ export const config = {
   // - /_next (Next.js internals)
   // - /_vercel (Vercel internals)
   // - /static (static files)
-  // - /admin (direct admin route)
-  matcher: ['/((?!api|_next|_vercel|static|admin).*)']
+  matcher: ['/((?!api|_next|_vercel|static).*)']
 }; 
