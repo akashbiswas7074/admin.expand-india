@@ -17,5 +17,6 @@ export const config = {
   // - /_next (Next.js internals)
   // - /_vercel (Vercel internals)
   // - /static (static files)
-  matcher: ['/((?!api|_next|_vercel|static).*)']
+  // - /admin (direct admin route)
+  matcher: ['/((?!api|_next|_vercel|static|admin).*)']
 }; 
