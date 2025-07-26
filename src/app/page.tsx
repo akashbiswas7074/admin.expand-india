@@ -11,11 +11,11 @@ export default function RootPage() {
     // Check if user has already chosen a language
     const hasChosenLanguage = localStorage.getItem('language-chosen')
     
-    // If user has already chosen a language, redirect to their preferred locale
+    // If user has already chosen a language, redirect to admin page
     if (hasChosenLanguage) {
       // Get the preferred locale from localStorage or default to 'en'
       const preferredLocale = localStorage.getItem('preferred-locale') || 'en'
-      router.replace(`/${preferredLocale}`)
+      router.replace(`/${preferredLocale}/admin`)
     }
     // If not, the LanguageChoicePopup will handle the choice
   }, [router])

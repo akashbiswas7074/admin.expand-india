@@ -48,8 +48,8 @@ export default function LanguageChoicePopup() {
     localStorage.setItem('language-chosen', 'true')
     localStorage.setItem('preferred-locale', langCode)
     
-    // Navigate to the selected language
-    router.push(`/${langCode}`)
+    // Navigate to the admin page for the selected language
+    router.push(`/${langCode}/admin`)
     setIsVisible(false)
   }
 
@@ -57,7 +57,7 @@ export default function LanguageChoicePopup() {
     // Mark that user has chosen a language (default to English)
     localStorage.setItem('language-chosen', 'true')
     localStorage.setItem('preferred-locale', 'en')
-    router.push('/en')
+    router.push('/en/admin')
     setIsVisible(false)
   }
 
@@ -72,7 +72,7 @@ export default function LanguageChoicePopup() {
             <div className="flex items-center space-x-3">
               <Globe className="w-8 h-8" />
               <div>
-                <h2 className="text-2xl font-bold">Welcome to Expand India</h2>
+                <h2 className="text-2xl font-bold">Welcome to Admin Panel</h2>
                 <p className="text-sky-100 text-sm mt-1">Choose your preferred language</p>
               </div>
             </div>
