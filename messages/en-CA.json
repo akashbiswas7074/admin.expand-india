@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "industries": "Industries",
+    "services": "Services",
+    "solutions": "Solutions",
+    "blog": "Blog",
+    "contact": "Contact",
+    "color": "Colour"
+  },
+  "hero": {
+    "title": "Expand India",
+    "subtitle": "We help Canadian companies expand into the Indian market through comprehensive business solutions, strategic guidance, and local expertise.",
+    "getStarted": "Get Started Today",
+    "ourSolutions": "Our Solutions"
+  },
+  "industries": {
+    "title": "Industries & Services",
+    "subtitle": "Comprehensive overview of key industries and sectors where Canadian companies can find opportunities in Canada"
+  }
+} 

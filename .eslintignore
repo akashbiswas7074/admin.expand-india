@@ -1,0 +1,27 @@
+# Ignore everything
+*
+**/*
+**/**/*
+
+# Specifically ignore common directories
+node_modules/
+.next/
+.git/
+dist/
+build/
+public/
+uploads/
+
+# Ignore all file types
+*.js
+*.jsx
+*.ts
+*.tsx
+*.mjs
+*.cjs
+
+# Ignore config files
+next.config.*
+tailwind.config.*
+postcss.config.*
+tsconfig.json 
